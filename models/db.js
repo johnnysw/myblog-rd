@@ -3,7 +3,7 @@ const mysql = require("mysql");
 // 配置数据库连接池 haha
 var pool = mysql.createPool({
   connectionLimit: 10,
-  host: "172.25.53.178",
+  host: "localhost",
   user: "root",
   password: "MyNewPass2021!",
   database: "myblog_test",
