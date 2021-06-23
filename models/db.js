@@ -1,6 +1,6 @@
 const mysql = require("mysql");
 
-// 配置数据库连接池
+// 配置数据库连接池 haha
 var pool = mysql.createPool({
   connectionLimit: 10,
   host: "localhost",
