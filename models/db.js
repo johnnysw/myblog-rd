@@ -6,7 +6,7 @@ var pool = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "MyNewPass2021!",
-  database: "myblog_test",
+  database: "myblog",
 });
 
 // var pool = mysql.createPool({
