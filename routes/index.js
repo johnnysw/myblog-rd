@@ -2,7 +2,7 @@ const router = require("koa-router")();
 const user = require("./users");
 const blog = require("./blogs");
 
-router.get("/test", async (ctx) => {
+router.get("/api/test", async (ctx) => {
   ctx.body = 'hello test';
 });
 
