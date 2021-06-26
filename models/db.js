@@ -20,14 +20,18 @@ var pool = mysql.createPool({
 module.exports = {
   query: function (sql, params) {
     return new Promise(function (resolve, reject) {
-      pool.getConnection(function (err, connection) {
-        if (err) reject(err); // not connected!
-        connection.query(sql, params, function (error, results, fields) {
-          connection.release();
-          if (error) reject(error);
-          resolve(results);
+      try {
+        pool.getConnection(function (err, connection) {
+          if (err) reject(err); // not connected!
+          connection.query(sql, params, function (error, results, fields) {
+            connection.release();
+            if (error) reject(error);
+            resolve(results);
+          });
         });
-      });
+      } catch (err) {
+        console.log(err);
+      }
     });
-  }
+  },
 };
